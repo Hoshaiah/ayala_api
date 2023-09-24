@@ -14,6 +14,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_111417) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cars", force: :cascade do |t|
+    t.string "plateNumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "graphs", force: :cascade do |t|
     t.json "adjacencyList"
     t.json "nodeOccupancy"
@@ -34,10 +40,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_111417) do
     t.float "totalBill"
     t.string "exitTime"
     t.bigint "graph_id", null: false
+    t.bigint "car_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_logs_on_car_id"
     t.index ["graph_id"], name: "index_logs_on_graph_id"
   end
 
+  add_foreign_key "logs", "cars"
   add_foreign_key "logs", "graphs"
 end

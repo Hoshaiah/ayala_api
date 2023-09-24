@@ -12,6 +12,7 @@ class CreateLogs < ActiveRecord::Migration[7.0]
       t.float :totalBill
       t.string :exitTime
       t.references :graph, null: false, foreign_key: true
+      t.references :car, null: false, foreign_key: true
 
       t.timestamps
     end
