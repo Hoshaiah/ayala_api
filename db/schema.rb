@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_24_033636) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_24_111417) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,4 +22,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_033636) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "logs", force: :cascade do |t|
+    t.string "action"
+    t.string "carPlate"
+    t.string "node"
+    t.string "parkedCar"
+    t.string "parkingSize"
+    t.string "entryTime"
+    t.float "costPaidAlready"
+    t.string "recentEntryTime"
+    t.float "totalBill"
+    t.string "exitTime"
+    t.bigint "graph_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["graph_id"], name: "index_logs_on_graph_id"
+  end
+
+  add_foreign_key "logs", "graphs"
 end

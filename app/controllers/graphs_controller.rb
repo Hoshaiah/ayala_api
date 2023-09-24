@@ -9,10 +9,6 @@ class GraphsController < ApplicationController
         end
     end
   
-    def new
-        @graph = Graph.new
-    end
-  
     def create
         @graph = Graph.new(graph_params)
         if @graph.save

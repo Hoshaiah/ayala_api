@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  action: MyString
+  carPlate: MyString
+  node: MyString
+  parkedCar: MyString
+  parkingSize: MyString
+  entryTime: MyString
+  costPaidAlready: 1.5
+  recentEntryTime: MyString
+  totalBill: 1.5
+  exitTime: MyString
+
+two:
+  action: MyString
+  carPlate: MyString
+  node: MyString
+  parkedCar: MyString
+  parkingSize: MyString
+  entryTime: MyString
+  costPaidAlready: 1.5
+  recentEntryTime: MyString
+  totalBill: 1.5
+  exitTime: MyString
