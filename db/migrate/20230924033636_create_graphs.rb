@@ -3,6 +3,7 @@ class CreateGraphs < ActiveRecord::Migration[7.0]
     create_table :graphs do |t|
       t.json :adjacencyList
       t.json :nodeOccupancy
+      t.string :name, null: false
 
       t.timestamps
     end

@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_033636) do
   create_table "graphs", force: :cascade do |t|
     t.json "adjacencyList"
     t.json "nodeOccupancy"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
