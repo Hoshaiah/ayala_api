@@ -3,7 +3,7 @@ class LogsController < ApplicationController
     before_action :set_car, only: %i[ create ]
 
     def index
-        @logs = Log.where(graph_id: @graph.id, carPlate: log_params[:carPlate])
+        @logs =  @graph.logs
 
         if @logs
             render json: { 'logs' => @logs }
