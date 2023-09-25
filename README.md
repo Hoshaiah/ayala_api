@@ -1,24 +1,32 @@
-# README
+# Launch my Ayala Parking API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Clone the repo
+```bash
+git clone https://github.com/Hoshaiah/ayala_api.git
+cd ayala_api
+```
 
-Things you may want to cover:
+2. Make sure to have Ruby and PostgreSQL installed on your machine. 
 
-* Ruby version
+3. Launch postgresql server
+```bash
+pg_ctl start
+pg_ctl status
+```
 
-* System dependencies
+4. Install bundler and gems
+```bash
+gem install bundler
+bundle install
+```
 
-* Configuration
+5. Set up database
+```
+rails db:create
+rails db:migrate
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+6. Start up server :smile:
+```
+rails s
+```
